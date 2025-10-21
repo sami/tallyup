@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TallyUp - A modern, accessible calculator web app">
+    <title>TallyUp Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="app-title">TallyUp</h1>
+        <p class="app-subtitle">Modern Calculator</p>
+    </header>
+
+    <main class="calculator-container">
+        <div class="calculator" role="application" aria-label="TallyUp Calculator">
+            <!-- Display Section -->
+            <div class="display-section">
+                <div class="display" aria-live="polite">
+                    <div class="expression" aria-label="Current expression"></div>
+                    <input 
+                        type="text" 
+                        id="calculator-display" 
+                        class="display-input" 
+                        value="0" 
+                        readonly 
+                        aria-label="Calculator result display"
+                    >
+                </div>
+            </div>
+
+            <!-- Keypad Section -->
+            <div class="keypad" role="group" aria-label="Calculator buttons">
+                <!-- First Row: Clear, Delete, Operations -->
+                <button class="btn btn-function" data-action="clear" aria-label="Clear all">C</button>
+                <button class="btn btn-function" data-action="delete" aria-label="Delete last entry">⌫</button>
+                <button class="btn btn-function" data-action="percentage" aria-label="Percentage">%</button>
+                <button class="btn btn-operator" data-operator="÷" aria-label="Divide">÷</button>
+
+                <!-- Second Row: Numbers 7-9, Multiply -->
+                <button class="btn btn-number" data-number="7" aria-label="Seven">7</button>
+                <button class="btn btn-number" data-number="8" aria-label="Eight">8</button>
+                <button class="btn btn-number" data-number="9" aria-label="Nine">9</button>
+                <button class="btn btn-operator" data-operator="×" aria-label="Multiply">×</button>
+
+                <!-- Third Row: Numbers 4-6, Subtract -->
+                <button class="btn btn-number" data-number="4" aria-label="Four">4</button>
+                <button class="btn btn-number" data-number="5" aria-label="Five">5</button>
+                <button class="btn btn-number" data-number="6" aria-label="Six">6</button>
+                <button class="btn btn-operator" data-operator="-" aria-label="Subtract">-</button>
+
+                <!-- Fourth Row: Numbers 1-3, Add -->
+                <button class="btn btn-number" data-number="1" aria-label="One">1</button>
+                <button class="btn btn-number" data-number="2" aria-label="Two">2</button>
+                <button class="btn btn-number" data-number="3" aria-label="Three">3</button>
+                <button class="btn btn-operator" data-operator="+" aria-label="Add">+</button>
+
+                <!-- Fifth Row: Zero, Decimal, Equals -->
+                <button class="btn btn-number btn-zero" data-number="0" aria-label="Zero">0</button>
+                <button class="btn btn-function" data-action="decimal" aria-label="Decimal point">.</button>
+                <button class="btn btn-equals" data-action="calculate" aria-label="Equals">=</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TallyUp Calculator. Built with ❤️ by Sami Bashraheel</p>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/operations.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>
