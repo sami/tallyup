@@ -1,0 +1,277 @@
+/* TallyUp Calculator - Responsive Styles */
+/* Mobile-first responsive design with modern breakpoints */
+
+/* Base Mobile Styles (320px and up) */
+@media screen and (min-width: 320px) {
+  .calculator-container {
+    padding: var(--spacing-4);
+  }
+  
+  .calculator {
+    padding: var(--spacing-4);
+    max-width: 100%;
+  }
+  
+  .btn {
+    min-height: 55px;
+    font-size: var(--font-size-lg);
+  }
+  
+  .display-input {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Small Mobile Landscape (480px and up) */
+@media screen and (min-width: 480px) {
+  .calculator-container {
+    padding: var(--spacing-6);
+  }
+  
+  .calculator {
+    padding: var(--spacing-6);
+    max-width: 380px;
+  }
+  
+  .btn {
+    min-height: 60px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .display-input {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Tablet Portrait (768px and up) */
+@media screen and (min-width: 768px) {
+  .calculator-container {
+    padding: var(--spacing-8);
+  }
+  
+  .calculator {
+    max-width: 420px;
+    padding: var(--spacing-8);
+  }
+  
+  .btn {
+    min-height: 65px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .display {
+    min-height: 140px;
+  }
+  
+  .display-input {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .keypad {
+    gap: var(--spacing-4);
+  }
+}
+
+/* Tablet Landscape / Small Desktop (1024px and up) */
+@media screen and (min-width: 1024px) {
+  .calculator {
+    max-width: 450px;
+  }
+  
+  .btn {
+    min-height: 70px;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  .btn-operator:hover,
+  .btn-equals:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.4);
+  }
+}
+
+/* Desktop (1280px and up) */
+@media screen and (min-width: 1280px) {
+  .calculator-container {
+    padding: var(--spacing-12);
+  }
+  
+  .calculator {
+    max-width: 500px;
+  }
+  
+  .btn {
+    min-height: 75px;
+  }
+}
+
+/* Large Desktop (1536px and up) */
+@media screen and (min-width: 1536px) {
+  .calculator {
+    max-width: 550px;
+  }
+}
+
+/* Landscape Orientation Optimizations */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  header {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .app-subtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .calculator-container {
+    padding: var(--spacing-3);
+  }
+  
+  .calculator {
+    padding: var(--spacing-3);
+  }
+  
+  .display {
+    min-height: 80px;
+  }
+  
+  .display-input {
+    font-size: var(--font-size-xl);
+  }
+  
+  .btn {
+    min-height: 45px;
+    font-size: var(--font-size-base);
+  }
+  
+  .keypad {
+    gap: var(--spacing-2);
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 60px;
+    /* Increase touch target size */
+  }
+  
+  .btn:hover {
+    /* Disable hover effects on touch devices */
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .btn:active {
+    transform: scale(0.95);
+    background-color: var(--surface-hover);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  .calculator {
+    /* Sharper shadows and borders for high DPI */
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .calculator {
+    box-shadow: none;
+    border: 2px solid #000;
+  }
+  
+  .btn {
+    border: 1px solid #000;
+    background: white !important;
+    color: black !important;
+  }
+  
+  header {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Container Queries (Future-proofing) */
+@container (min-width: 400px) {
+  .calculator {
+    padding: var(--spacing-8);
+  }
+}
+
+/* Accessibility: Large Text Support */
+@media (prefers-contrast: high) {
+  .btn {
+    border-width: 2px;
+    font-weight: 600;
+  }
+}
+
+/* Dark Mode Preparation (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border: #475569;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --display-bg: #1e293b;
+    --display-text: #f8fafc;
+    --number-bg: #334155;
+    --number-hover: #475569;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* Focus Management for Keyboard Navigation */
+@media (prefers-reduced-motion: no-preference) {
+  .btn:focus-visible {
+    transform: scale(1.05);
+    transition: transform var(--transition-fast);
+  }
+}
+
+/* Wide Screen Layout Adjustments */
+@media screen and (min-width: 1920px) {
+  .calculator-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Ultra-wide Screen Support */
+@media screen and (min-aspect-ratio: 21/9) {
+  .calculator-container {
+    justify-content: center;
+    align-items: center;
+  }
+}
